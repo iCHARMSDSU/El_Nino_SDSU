@@ -7,7 +7,7 @@ lede: Who makes these resources and how to use them.
 
 ## The lab
 
-The El Niño Resource Library is maintained by the **{{ site.lab_name }}** at San Diego State University, led by Distinguished Professor Sam Shen. The lab develops open, reproducible tools for visualizing and analyzing climate data. *[Replace with the lab’s preferred description.]*
+The El Niño Resource Garden is maintained by the **{{ site.lab_name }}** at San Diego State University, led by Distinguished Professor Sam Shen. The lab develops open, reproducible tools for visualizing and analyzing climate data. *[Replace with the lab’s preferred description.]*
 
 ## Using these materials
 
