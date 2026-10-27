@@ -22,7 +22,12 @@
        duration    e.g. "0:45"
        period      e.g. "1997–1998"
        dataSource  e.g. "NOAA OISST v2.1"
-       createdBy
+      createdBy
+       Figure explanation (each shows as its own labeled block):
+         whatItShows   what the viewer is looking at
+         howItRelates  how it connects to El Niño
+         howToRead     colors, axes, units, what to look for
+         data          the dataset(s) behind it
        downloadUrl, format  adds a Download button
        citation    adds a "How to cite" box with a copy button
        featured: true   shows it on the home page
@@ -30,7 +35,7 @@
    ========================================================= */
 
 const RESOURCE_TYPES = ["Animation", "Video", "Image", "Dataset", "Lesson"];
-const TOPICS = ["ENSO Basics", "Ocean", "Atmosphere", "Impacts", "Forecasting", "Historical Events"];
+const TOPICS = ["ENSO Basics", "Ocean", "Below the Surface", "Kelvin Waves & Sea Level", "Atmosphere", "Impacts", "Southern California", "Forecasting", "Historical Events"];
 const AUDIENCES = ["General Public", "Students", "Educators", "Researchers"];
 
 const RESOURCES = [
@@ -41,7 +46,11 @@ const RESOURCES = [
     topic: "Historical Events",
     audience: ["General Public", "Students", "Educators"],
     summary: "Monthly SST anomalies across the Pacific during one of the strongest El Niño events on record.",
-    description: "<p><em>Sample resource. Replace this text with a full description: what the viewer is seeing, how to read the colors or axes, and suggested uses.</em></p>",
+    description: "<p><em>Sample resource. Replace these fields with the real description when the animation is added.</em></p>",
+    whatItShows: "Month-by-month sea surface temperature anomalies across the Pacific from early 1997 through 1998.",
+    howItRelates: "Watch the warm water spread east along the equator toward South America as the 1997–98 El Niño builds, peaks, and fades.",
+    howToRead: "Red means warmer than the 1991–2020 average for that month and blue means cooler. The darker the color, the larger the difference.",
+    data: "NOAA OISST v2.1 sea surface temperature.",
     duration: "0:45",
     period: "1997–1998",
     dataSource: "NOAA OISST v2.1",

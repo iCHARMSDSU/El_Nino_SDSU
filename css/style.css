@@ -240,3 +240,48 @@ h3 { font-size: 1.05rem; letter-spacing: -.01em; }
   .timeline span:first-child { display: none; }
   .footer-inner { grid-template-columns: 1fr; }
 }
+
+/* ===== Added: figure explanations, status box, figure slots, glossary ===== */
+
+/* "What it shows / How to read" blocks on resource pages */
+.explain { border-left: 3px solid var(--border-strong); padding: .1rem 0 .1rem 1rem; margin: 1.1rem 0; }
+.explain h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-faint); margin-bottom: .25rem; }
+.explain p { margin: 0; }
+
+/* NOAA status box on the 2026/27 page */
+.status { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; margin: 1.5rem 0; }
+.status-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .5rem; margin-bottom: .8rem; }
+.status-head strong { font-size: 1.05rem; }
+.status-head span { font-size: .85rem; color: var(--text-faint); }
+.status dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: .55rem 1.25rem; font-size: .95rem; }
+.status dt { color: var(--text-faint); }
+.status dd { margin: 0; color: var(--text); }
+.status-note { margin: 1rem 0 0; font-size: .85rem; color: var(--text-soft); }
+
+/* Dashed placeholder boxes where Dylan's figures will go */
+.figure-slot { aspect-ratio: 16/9; border: 1px dashed var(--border-strong); border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1rem; margin: 1.2rem 0; background: var(--panel); }
+.figure-slot strong { font-size: 1rem; }
+.figure-slot span { font-size: .85rem; color: var(--text-faint); margin-top: .3rem; max-width: 46ch; }
+
+/* Numbered findings list and small gray notes */
+.findings { padding-left: 1.2rem; }
+.findings li { margin: .45rem 0; }
+.note { font-size: .85rem; color: var(--text-faint); }
+
+/* Glossary on the Learn page */
+.glossary { margin: 0; }
+.glossary dt { font-weight: 600; color: var(--text); margin-top: 1rem; }
+.glossary dd { margin: .2rem 0 0; color: #d4d4d8; }
+
+/* Two large tiles on the home page */
+.explore-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.explore-grid .type-tile { min-height: 150px; }
+.explore-grid .type-tile span { font-size: .9rem; max-width: 46ch; }
+
+/* With 6 menu links, switch to the ☰ menu on tablets too */
+@media (max-width: 960px) {
+  .nav-toggle { display: block; }
+  .site-nav { display: none; position: absolute; top: 64px; left: 0; right: 0; background: rgba(5,5,6,.96); border-bottom: 1px solid var(--border); flex-direction: column; padding: .5rem 16px 1rem; }
+  .site-nav.open { display: flex; }
+  .explore-grid { grid-template-columns: 1fr; }
+}

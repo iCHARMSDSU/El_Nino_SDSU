@@ -21,6 +21,8 @@
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
       <nav class="site-nav">
         <a href="index.html">Home</a>
+        <a href="el-nino-2026-27.html">2026/27 El Niño</a>
+        <a href="southern-california.html">Southern California</a>
         <a href="library.html">Library</a>
         <a href="learn.html">Learn</a>
         <a href="about.html">About</a>
@@ -37,17 +39,47 @@
     </section>
 
     <div class="wrap page-body">
-      <article class="prose">
-        <h2>The lab</h2>
-        <p>The El Niño Resource Library is maintained by the <strong>SDSU Climate Informatics Lab</strong> at San Diego State University, led by Distinguished Professor Sam Shen. The lab develops open, reproducible tools for visualizing and analyzing climate data. <em>[Replace with the lab’s preferred description.]</em></p>
+      <nav class="toc" aria-label="On this page">
+        <p>On this page</p>
+        <a href="#lab">The lab</a>
+        <a href="#credits">Credits</a>
+        <a href="#data">Methods and data</a>
+        <a href="#use">Using these materials</a>
+        <a href="#cite">How to cite this site</a>
+        <a href="#contribute">Contributing</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-        <h2>Using these materials</h2>
+      <article class="prose">
+        <h2 id="lab">The lab</h2>
+        <p>The El Niño Resource Library is maintained by the <strong>SDSU Climate Informatics Lab</strong> at San Diego State University, led by Distinguished Professor Sam Shen. The lab develops open, reproducible tools for visualizing and analyzing climate data, including <a href="https://icharm.sdsu.edu/" target="_blank" rel="noopener">iCHARM</a>, an interactive platform for exploring weather and climate data.</em></p>
+        <h2 id="credits">Credits</h2>
+        <ul>
+          <li><strong>Waverley Moody</strong>: website design and content</li>
+          <li><strong>Dylan Hahn</strong>: ENSO visualizations and analysis</li>
+          <li><strong><a href="https://icharm.sdsu.edu/" target="_blank" rel="noopener">iCHARM developers</a></strong>: climate data visualization platform, SDSU Climate Informatics Lab</li>
+          <li><strong>Sam Shen</strong>: faculty advisor</li>
+        </ul>
+        <h2 id="data">Methods and data</h2>
+        <p>Everything on this site is built from public NOAA data. Anomalies are measured against the 1991–2020 average unless a figure says otherwise.</p>
+        <ul>
+          <li><strong>Relative Oceanic Niño Index (RONI)</strong>, NOAA Climate Prediction Center: official ENSO strength and outlooks</li>
+          <li><strong>ERSST v5</strong> (Extended Reconstructed Sea Surface Temperature), NOAA NCEI: monthly sea surface temperatures back to the 1800s</li>
+          <li><strong>OISST v2.1</strong> (Optimum Interpolation Sea Surface Temperature), NOAA NCEI: daily, higher-resolution sea surface temperatures</li>
+          <li><strong>NCEP GODAS</strong> (Global Ocean Data Assimilation System): ocean temperatures below the surface</li>
+        </ul>
+        <p>Each figure's page lists the exact data it uses. Limitations: forecasts are probabilities, not certainties, and records based on data since 1950 may not reflect older events.</p>
+
+        <h2 id="use">Using these materials</h2>
         <p>Resources are free to use for teaching, learning, and research. Each resource page lists its data source and a suggested citation. <em>[Confirm the license, for example CC BY 4.0, with the lab.]</em></p>
 
-        <h2>Contributing a resource</h2>
-        <p>Lab members can add a resource by adding one entry to <code>js/resources.js</code> in the site’s GitHub repository. Videos and images can go in the <code>images/</code> folder.</p>
+        <h2 id="cite">How to cite this site</h2>
+        <p class="callout">SDSU Climate Informatics Lab (2026). <em>El Niño Resource Library</em>. San Diego State University. https://icharmsdsu.github.io/El_Nino_SDSU/</p>
 
-        <h2>Contact</h2>
+        <h2 id="contribute">Contributing a resource</h2>
+        <p>Lab members can add a resource by adding one entry to <code>js/resources.js</code> in the site’s GitHub repository. Images and videos go in the <code>images/</code> folder.</p>
+
+        <h2 id="contact">Contact</h2>
         <p><em>[Lab email or contact form link]</em></p>
       </article>
     </div>
@@ -61,6 +93,8 @@
         San Diego State University
       </div>
       <div class="footer-links">
+        <a href="el-nino-2026-27.html">2026/27 El Niño</a>
+        <a href="southern-california.html">Southern California</a>
         <a href="library.html">Library</a>
         <a href="learn.html">Learn</a>
         <a href="about.html">About</a>

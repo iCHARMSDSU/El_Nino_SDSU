@@ -148,7 +148,13 @@ if (resourcePage) {
       <div class="resource-grid">
         <div>
           <div class="media ${typeClass(r.type)}">${media}</div>
-          <div class="prose">${r.description || ""}</div>
+          <div class="prose">
+            ${r.description || ""}
+            ${[["What it shows", r.whatItShows], ["How it relates to El Niño", r.howItRelates],
+               ["How to read this figure", r.howToRead], ["Data", r.data]]
+              .filter(([, v]) => v)
+              .map(([label, v]) => `<div class="explain"><h3>${label}</h3><p>${esc(v)}</p></div>`).join("")}
+          </div>
         </div>
         <aside class="details">
           ${r.downloadUrl ? `<a class="btn btn-primary btn-block" href="${esc(r.downloadUrl)}">Download ${esc(r.format || "")}</a>` : ""}
