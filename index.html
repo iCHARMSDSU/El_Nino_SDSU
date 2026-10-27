@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Niño Resource Library</title>
+  <meta name="description" content="Animations, videos, and teaching materials on El Niño and the Southern Oscillation from the SDSU Climate Informatics Lab.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header (same on every page) ===== -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo gradient-text">iCHARM</span>
+        <span class="brand-text">El Niño Resource Library</span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="library.html">Library</a>
+        <a href="learn.html">Learn</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">SDSU Climate Informatics Lab</p>
+          <h1>See <span class="gradient-text">El Niño</span> unfold across the Pacific.</h1>
+          <p class="lede">Animations, videos, data, and lessons that show how the Pacific Ocean and atmosphere shape climate around the world. Free for teaching, learning, and research.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="library.html">Browse the library</a>
+            <a class="btn btn-ghost-light" href="learn.html">What is El Niño?</a>
+            <a class="btn btn-ghost-light" href="library.html?topic=Historical%20Events">Explore El Niño events</a>
+          </div>
+        </div>
+        <a class="hero-feature" id="hero-feature" href="library.html">
+          <div class="hero-media" aria-hidden="true"><div class="globe"></div></div>
+          <p class="hero-caption"><span class="badge">Featured</span> <span id="hero-title">Featured animation</span></p>
+        </a>
+      </div>
+    </section>
+
+    <section class="wrap section">
+      <div class="section-head">
+        <h2>Browse by type</h2>
+        <a href="library.html" id="view-all">View all resources →</a>
+      </div>
+      <div class="type-grid" id="type-grid"></div>
+    </section>
+
+    <section class="wrap section">
+      <div class="section-head">
+        <h2>Featured resources</h2>
+      </div>
+      <div class="card-grid" id="featured"></div>
+    </section>
+
+    <section class="band">
+      <div class="wrap band-inner">
+        <div>
+          <h2>New to El Niño?</h2>
+          <p>Start with a short guided path: what El Niño and La Niña are, how scientists measure them, and why they matter for rainfall, fisheries, and economies.</p>
+        </div>
+        <a class="btn btn-primary" href="learn.html">Start learning</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>SDSU Climate Informatics Lab</strong><br>
+        San Diego State University
+      </div>
+      <div class="footer-links">
+        <a href="library.html">Library</a>
+        <a href="learn.html">Learn</a>
+        <a href="about.html">About</a>
+      </div>
+      <p class="footer-note">Materials are free to use for education and research. Please cite the source listed on each resource page.</p>
+    </div>
+  </footer>
+
+  <script src="js/resources.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

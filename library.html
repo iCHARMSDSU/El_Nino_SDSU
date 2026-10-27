@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library · El Niño Resource Library</title>
+  <meta name="description" content="Animations, videos, and teaching materials on El Niño and the Southern Oscillation from the SDSU Climate Informatics Lab.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header (same on every page) ===== -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo gradient-text">iCHARM</span>
+        <span class="brand-text">El Niño Resource Library</span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="library.html">Library</a>
+        <a href="learn.html">Learn</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <h1>Resource Library</h1>
+        <p class="lede">Every animation, video, figure, dataset, and lesson in one place. Filter by type, topic, or audience.</p>
+        <div class="search">
+          <input id="search" type="search" placeholder="Search resources, e.g. “1997”, “sea surface temperature”…" aria-label="Search resources">
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap library">
+      <aside class="filters" aria-label="Filters">
+        <div class="filters-head">
+          <strong>Filter</strong>
+          <button class="link-btn" id="clear-filters">Clear all</button>
+        </div>
+        <div id="filter-groups"></div>
+      </aside>
+
+      <section>
+        <div class="results-bar">
+          <p id="result-count" aria-live="polite"></p>
+          <button class="btn btn-ghost btn-small filters-toggle">Filters</button>
+        </div>
+        <div class="card-grid" id="results"></div>
+        <p class="empty" id="empty" hidden>No resources match those filters. <button class="link-btn" id="clear-filters-2">Clear filters</button></p>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== Footer (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>SDSU Climate Informatics Lab</strong><br>
+        San Diego State University
+      </div>
+      <div class="footer-links">
+        <a href="library.html">Library</a>
+        <a href="learn.html">Learn</a>
+        <a href="about.html">About</a>
+      </div>
+      <p class="footer-note">Materials are free to use for education and research. Please cite the source listed on each resource page.</p>
+    </div>
+  </footer>
+
+  <script src="js/resources.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
