@@ -48,8 +48,8 @@ const typeGrid = document.getElementById("type-grid");
 if (typeGrid) {
   const blurbs = {
     Animation: "Maps and fields in motion", Video: "Explainers and lectures",
-    Image: "Figures and static maps", Dataset: "Files for analysis", Lesson: "Classroom-ready activities"
-  };
+    Image: "Figures and static maps", Dataset: "Files for analysis"
+    };
   typeGrid.innerHTML = RESOURCE_TYPES.map(t => `
     <a class="type-tile ${typeClass(t)}" href="library.html?type=${encodeURIComponent(t)}">
       <strong>${esc(t)}s</strong>
