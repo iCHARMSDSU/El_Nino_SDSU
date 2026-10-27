@@ -60,12 +60,6 @@ if (typeGrid) {
   document.getElementById("view-all").textContent = `View all ${RESOURCES.length} resources →`;
   document.getElementById("featured").innerHTML =
     RESOURCES.filter(r => r.featured).slice(0, 4).map(cardHTML).join("");
-
-  const hero = RESOURCES.find(r => r.hero);
-  if (hero) {
-    document.getElementById("hero-feature").href = resourceLink(hero);
-    document.getElementById("hero-title").textContent = hero.title;
-  }
 }
 
 // ---------- Library page ----------

@@ -285,3 +285,24 @@ h3 { font-size: 1.05rem; letter-spacing: -.01em; }
   .site-nav.open { display: flex; }
   .explore-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== Added: 3D data globe on the home page ===== */
+
+/* The 3D globe fades in on top of the CSS placeholder globe */
+.globe-canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .8s; }
+.hero-media.globe-ready .globe-canvas { opacity: 1; }
+.hero-media.globe-ready .globe { display: none; }
+
+/* Thin glowing rim around the globe, like iCHARM (inset matches the globe's edge) */
+.hero-media.globe-ready::after { content: ""; position: absolute; inset: 3.05%; border-radius: 50%; pointer-events: none;
+  box-shadow: 0 0 0 1.5px rgba(200,225,255,.75), 0 0 24px 2px rgba(120,180,255,.35), 0 0 90px rgba(101,166,245,.18); }
+
+/* Rainbow color bar under the globe */
+.globe-legend { width: min(300px, 80%); margin: 1.1rem auto 0; font-size: .75rem; color: var(--text-faint); }
+.globe-legend-bar { height: 8px; border-radius: 4px;
+  background: linear-gradient(90deg, #0000a0, #003cff 15%, #00dcff 35%, #78ff78 50%, #ffeb00 65%, #ff2800 85%, #960000); }
+.globe-legend-title { margin: 0 0 .4rem; text-align: center; font-size: .75rem; font-weight: 500; color: var(--text-soft); letter-spacing: .02em; }
+.globe-legend-labels { display: flex; justify-content: space-between; margin-top: .3rem; font-variant-numeric: tabular-nums; }
+.globe-legend-labels span { width: 2.2em; text-align: center; }
+.globe-legend-labels span:first-child { text-align: left; }
+.globe-legend-labels span:last-child { text-align: right; }

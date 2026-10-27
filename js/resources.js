@@ -31,7 +31,6 @@
        downloadUrl, format  adds a Download button
        citation    adds a "How to cite" box with a copy button
        featured: true   shows it on the home page
-       hero: true       makes it the home page's featured animation
    ========================================================= */
 
 const RESOURCE_TYPES = ["Animation", "Video", "Image", "Dataset", "Lesson"];
@@ -56,8 +55,7 @@ const RESOURCES = [
     dataSource: "NOAA OISST v2.1",
     createdBy: "SDSU Climate Informatics Lab",
     citation: "SDSU Climate Informatics Lab (2026). 1997–98 El Niño: Sea Surface Temperature Anomalies. El Niño Resource Library.",
-    featured: true,
-    hero: true
+    featured: true
   },
   {
     id: "enso-explained",

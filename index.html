@@ -43,9 +43,14 @@
             <a class="btn btn-ghost-light" href="el-nino-2026-27.html">The 2026/27 El Niño</a>
           </div>
         </div>
-        <a class="hero-feature" id="hero-feature" href="library.html">
-          <div class="hero-media" aria-hidden="true"><div class="globe"></div></div>
-          <p class="hero-caption"><span class="badge">Featured</span> <span id="hero-title">Featured animation</span></p>
+        <a class="hero-feature" href="el-nino-2026-27.html">
+          <div class="hero-media" aria-label="Spinning globe showing sea surface temperature anomalies during the 2026/27 El Niño"><div class="globe"></div></div>
+          <div class="globe-legend" aria-hidden="true">
+            <p class="globe-legend-title">Warmer than normal (°C)</p>
+            <div class="globe-legend-bar"></div>
+            <div class="globe-legend-labels"><span>+1</span><span>+2</span><span>+3</span><span>+4</span><span>+5</span></div>
+          </div>
+          <p class="hero-caption"><span class="badge">2026/27 El Niño</span> Sea surface temperature anomaly · <span id="globe-date">NOAA OISST</span></p>
         </a>
       </div>
     </section>
@@ -111,5 +116,8 @@
 
   <script src="js/resources.js"></script>
   <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/coastlines.js"></script>
+  <script src="js/globe.js"></script>
 </body>
 </html>
