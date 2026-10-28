@@ -39,38 +39,6 @@ const AUDIENCES = ["General Public", "Students", "Educators", "Researchers"];
 
 const RESOURCES = [
   {
-    id: "sst-anomalies-1997-98",
-    title: "1997–98 El Niño: Sea Surface Temperature Anomalies",
-    type: "Animation",
-    topic: "Historical Events",
-    audience: ["General Public", "Students", "Educators"],
-    summary: "Monthly SST anomalies across the Pacific during one of the strongest El Niño events on record.",
-    description: "<p><em>Sample resource. Replace these fields with the real description when the animation is added.</em></p>",
-    whatItShows: "Month-by-month sea surface temperature anomalies across the Pacific from early 1997 through 1998.",
-    howItRelates: "Watch the warm water spread east along the equator toward South America as the 1997–98 El Niño builds, peaks, and fades.",
-    howToRead: "Red means warmer than the 1991–2020 average for that month and blue means cooler. The darker the color, the larger the difference.",
-    data: "NOAA OISST v2.1 sea surface temperature.",
-    duration: "0:45",
-    period: "1997–1998",
-    dataSource: "NOAA OISST v2.1",
-    createdBy: "SDSU Climate Informatics Lab",
-    citation: "SDSU Climate Informatics Lab (2026). 1997–98 El Niño: Sea Surface Temperature Anomalies. El Niño Resource Library.",
-    featured: true
-  },
-  {
-    id: "enso-explained",
-    title: "El Niño and La Niña Explained",
-    type: "Video",
-    topic: "ENSO Basics",
-    audience: ["General Public", "Students"],
-    summary: "A five-minute introduction to the ENSO cycle, trade winds, and the thermocline.",
-    description: "<p><em>Sample resource. Replace this text with a full description: what the viewer is seeing, how to read the colors or axes, and suggested uses.</em></p>",
-    duration: "5:12",
-    createdBy: "SDSU Climate Informatics Lab",
-    citation: "SDSU Climate Informatics Lab (2026). El Niño and La Niña Explained. El Niño Resource Library.",
-    featured: true
-  },
-  {
     id: "ocean-temp-monitoring-2026-27",
     title: "Ocean Water Temperature Monitoring of the 2026/27 Super El Niño",
     type: "Video",
@@ -97,5 +65,21 @@ const RESOURCES = [
     createdBy: "SDSU Climate Informatics Lab",
     citation: "Moody, W., SDSU Climate Informatics Lab (2026). Sea Surface Temperature Monitoring of 2026/27 Super El Niño [Video]. YouTube. https://youtu.be/p6AdLhFutNU",
     featured: true
+  },
+  {
+    id: "five-strong-el-nino-1877-2026",
+    title: "Comparing Five Very Strong El Niño Events (1877–2026)",
+    type: "Video",
+    topic: "Historical Events",
+    audience: ["General Public", "Students", "Educators"],
+    summary: "How the 2026 El Niño compares with four of the strongest events on record, from 1877 to the present.",
+    description: "<p>This animation shows five very strong El Niño events side by side on a globe: 1877–78, 1982–83, 1997–98, 2015–16, and 2026. Each one shows monthly sea surface temperature anomalies across the Pacific. A chart of the regional average then puts all five years on one timeline. In early September 2026, the event was running more than a degree ahead of 2015–16 at the same point, and it set a new daily Niño 3.4 record on September 21.</p>",
+    youtubeId: "yHuUhUuBMwE",
+    period: "1877–2026",
+    dataSource: "NOAA Global Surface Temperature (NOAAGlobalTemp)",
+    createdBy: "SDSU Climate Informatics Lab",
+    citation: "Moody, W., SDSU Climate Informatics Lab (2026). Comparing Five Very Strong El Niño Events (1877–2026) [Video]. YouTube. https://youtu.be/yHuUhUuBMwE",
+    featured: true
+
   }
 ];
