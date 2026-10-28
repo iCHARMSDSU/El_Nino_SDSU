@@ -10,6 +10,7 @@ function esc(s) {
 }
 const typeClass = t => "thumb--" + String(t).toLowerCase();
 const resourceLink = r => "resource.html?id=" + encodeURIComponent(r.id);
+const topicsOf = r => [].concat(r.topic || []);
 
 function cardHTML(r) {
   let img = "";
@@ -17,7 +18,7 @@ function cardHTML(r) {
   else if (r.youtubeId) img = `<img src="https://i.ytimg.com/vi/${esc(r.youtubeId)}/hqdefault.jpg" alt="" loading="lazy">`;
   return `
     <a class="card" href="${resourceLink(r)}"
-       data-type="${esc(r.type)}" data-topic="${esc(r.topic)}"
+       data-type="${esc(r.type)}" data-topic="${esc(topicsOf(r).join("|"))}"
        data-audience="${esc((r.audience || []).join("|"))}"
        data-search="${esc((r.title + " " + r.summary).toLowerCase())}">
       <div class="thumb ${typeClass(r.type)}">
@@ -26,7 +27,7 @@ function cardHTML(r) {
         ${r.duration ? `<span class="duration">${esc(r.duration)}</span>` : ""}
       </div>
       <div class="card-body">
-        <p class="card-topic">${esc(r.topic)}</p>
+        <p class="card-topic">${esc(topicsOf(r).join(" · "))}</p>
         <h3>${esc(r.title)}</h3>
         <p class="card-summary">${esc(r.summary)}</p>
       </div>
@@ -94,7 +95,7 @@ if (results) {
     cards.forEach(c => {
       const ok =
         (!sel.type || sel.type.includes(c.dataset.type)) &&
-        (!sel.topic || sel.topic.includes(c.dataset.topic)) &&
+        (!sel.topic || c.dataset.topic.split("|").some(t => sel.topic.includes(t))) &&
         (!sel.audience || c.dataset.audience.split("|").some(a => sel.audience.includes(a))) &&
         (!q || c.dataset.search.includes(q));
       c.hidden = !ok;
@@ -133,7 +134,8 @@ if (resourcePage) {
     else media = `<div class="media-placeholder"><span>${esc(r.type)} preview</span><small>Add <code>youtubeId</code>, <code>videoUrl</code> or <code>imageUrl</code> to this resource in js/resources.js</small></div>`;
 
     const row = (label, val) => val ? `<dt>${label}</dt><dd>${esc(val)}</dd>` : "";
-    const related = RESOURCES.filter(x => x.topic === r.topic && x.id !== r.id).slice(0, 3);
+    const myTopics = topicsOf(r);
+    const related = RESOURCES.filter(x => x.id !== r.id && topicsOf(x).some(t => myTopics.includes(t))).slice(0, 3);
 
     resourcePage.innerHTML = `
       <nav class="crumbs"><a href="library.html">Library</a> / <span>${esc(r.type)}</span></nav>
@@ -154,7 +156,7 @@ if (resourcePage) {
           ${r.downloadUrl ? `<a class="btn btn-primary btn-block" href="${esc(r.downloadUrl)}">Download ${esc(r.format || "")}</a>` : ""}
           <dl>
             ${row("Type", r.type)}
-            ${row("Topic", r.topic)}
+            ${row("Topic", myTopics.join(", "))}
             ${row("Audience", (r.audience || []).join(", "))}
             ${row("Time period", r.period)}
             ${row("Data source", r.dataSource)}
@@ -170,7 +172,7 @@ if (resourcePage) {
       </div>
       ${related.length ? `
         <section class="related">
-          <h2>More on ${esc(r.topic)}</h2>
+          <h2>More on ${esc(myTopics.join(" and "))}</h2>
           <div class="card-grid">${related.map(cardHTML).join("")}</div>
         </section>` : ""}`;
 

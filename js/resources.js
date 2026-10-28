@@ -42,7 +42,7 @@ const RESOURCES = [
     id: "ocean-temp-monitoring-2026-27",
     title: "Ocean Water Temperature Monitoring of the 2026/27 Super El Niño",
     type: "Video",
-    topic: "Ocean",
+    topic: ["Ocean", "Below the Surface"],
     audience: ["General Public", "Students", "Educators"],
     summary: "Tracking Pacific ocean water temperatures as the 2026/27 super El Niño develops.",
     description: "<p>Monitoring of Pacific ocean water temperatures during the 2026/27 super El Niño, produced by SDSU's Climate Informatics Lab.</p>",
