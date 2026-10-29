@@ -16,6 +16,8 @@ function cardHTML(r) {
   let img = "";
   if (r.thumbnail) img = `<img src="${esc(r.thumbnail)}" alt="" loading="lazy">`;
   else if (r.youtubeId) img = `<img src="https://i.ytimg.com/vi/${esc(r.youtubeId)}/hqdefault.jpg" alt="" loading="lazy">`;
+  else if (r.imageUrl) img = `<img src="${esc(r.imageUrl)}" alt="" loading="lazy">`;
+  else if (r.videoUrl) img = `<video src="${esc(r.videoUrl)}#t=0.5" muted playsinline preload="metadata"></video>`;
   return `
     <a class="card" href="${resourceLink(r)}"
        data-type="${esc(r.type)}" data-topic="${esc(topicsOf(r).join("|"))}"
@@ -131,7 +133,7 @@ if (resourcePage) {
     let media;
     if (r.youtubeId) media = `<iframe src="https://www.youtube-nocookie.com/embed/${esc(r.youtubeId)}" title="${esc(r.title)}" allowfullscreen></iframe>`;
     else if (r.videoUrl) media = `<video src="${esc(r.videoUrl)}" controls loop playsinline></video>`;
-    else if (r.imageUrl) media = `<img src="${esc(r.imageUrl)}" alt="${esc(r.title)}">`;
+    else if (r.imageUrl) media = `<a href="${esc(r.imageUrl)}" target="_blank" rel="noopener" title="Open full size"><img src="${esc(r.imageUrl)}" alt="${esc(r.title)}"></a>`;
     else if (r.interactiveUrl) media = `<iframe src="${esc(r.interactiveUrl)}" title="${esc(r.title)}" loading="lazy"></iframe>`;
     else media = `<div class="media-placeholder">...`;
 

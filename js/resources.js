@@ -80,6 +80,39 @@ const RESOURCES = [
     createdBy: "SDSU Climate Informatics Lab",
     citation: "Moody, W., SDSU Climate Informatics Lab (2026). Comparing Five Very Strong El Niño Events (1877–2026) [Video]. YouTube. https://youtu.be/yHuUhUuBMwE",
     featured: true
-
+  },
+    {
+    id: "wind-bursts-hovmoller",
+    title: "Westerly wind bursts along the equator",
+    type: "Image",
+    topic: "Kelvin Waves & Sea Level",           
+    audience: ["General Public", "Students", "Educators"],
+    summary: "Daily equatorial wind anomalies show the westerly wind bursts that built the 2026/2027 El Niño, compared with 2023/2024, 2015/2016 and 1997/1998.",
+    description: "<p>A Hovmöller diagram of daily surface wind along the equator, from October of the year before each El Niño to January after its first year. Red streaks are westerly wind bursts. From October 2025 to 30 September 2026 there were 7 bursts, compared with 6 in 2022/2023, 10 in 2014/2015 and 6 in 1996/1997 over the same part of the year.</p>",
+    whatItShows: "Daily surface wind along the equator compared with normal, from October of the year before each El Niño to January after its first year, for 2026/2027, 2023/2024, 2015/2016 and 1997/1998: red streaks are westerly wind bursts.",
+    howItRelates: "The trade winds normally pile warm water up in the western Pacific. Westerly wind bursts briefly reverse them, sending pulses of warm water east as Kelvin waves; repeated bursts, and the weakening of the trade winds as the ocean warms, are what turn a developing El Niño into a strong one.",
+    howToRead: "Time runs down the page, one row per day, from October of the year before each El Niño; position runs left to right from the western Pacific to South America. Red streaks are westerly wind bursts: spells of wind blowing toward South America, against the usual trade winds. Each strong burst is followed by a Kelvin wave in the figures below.",
+    data: "NOAA NCEI Blended Sea Winds v2, daily 10 m zonal wind (0.25°), averaged over 5°S–5°N; anomalies from the NCEI 1991–2020 monthly climatology; 5-day running means.",
+    imageUrl: "https://dylhahn.github.io/SCIL-ENSO/kelvin/img/01_hovmoller_winds.png",
+    createdBy: "Dylan Hahn, SDSU Climate Informatics Lab",
+    citation: "Hahn, D., SDSU Climate Informatics Lab (2026). Westerly wind bursts along the equator before and during major El Niño events. Data: NOAA NCEI Blended Sea Winds v2.",
+    featured: true
+  },
+  {
+    id: "sst-animation-surface",
+    title: "Sea Surface Temperature Animation",
+    type: "Animation",
+    topic: "Ocean",
+    audience: ["General Public", "Students", "Educators"],
+    summary: "Warm water, normally confined to the western Pacific, spreads farther east along the equator than in past very strong El Niño events.",
+    description: "<p>Animated month-by-month sea surface temperature across the tropical Pacific, from January of each El Niño's first year to December of the next, for 2026/2027 (to September 2026), 2023/2024, 2015/2016, 1997/1998, 1982/1983 and the 1991–2020 normal. In September of the first year, the Niño 3.4 region averaged 29.7 °C in 2026/2027, 28.3 °C in 2023/2024, 28.5 °C in 2015/2016, 28.6 °C in 1997/1998, 28.0 °C in 1982/1983, and 26.7 °C normally.</p>",
+    imageUrl: "https://dylhahn.github.io/SCIL-ENSO/surface/img/01_anim_sst.webp",
+    period: "1982–2026",
+    dataSource: "NOAA OISST v2.1",
+    whatItShows: "Animated month-by-month sea surface temperature across the tropical Pacific, from January of each El Niño's first year to December of the next, for 2026/2027, 2023/2024, 2015/2016, 1997/1998, 1982/1983 and the 1991–2020 normal, with the Niño 3.4 average for each.",
+    howItRelates: "El Niño is defined by unusually warm water in the central and eastern equatorial Pacific. As the warm water spreads east, the rising air and heavy rain that normally sit over the western Pacific move east with it, which shifts weather patterns around the world.",
+    data: "NOAA OISST v2.1 monthly mean sea surface temperature (0.25°), via NOAA PSL; normal = OISST 1991–2020 monthly mean.",
+    createdBy: "Dylan Hahn, SDSU Climate Informatics Lab",
+    citation: "Hahn, D., SDSU Climate Informatics Lab (2026). Sea Surface Temperature Animation [Animation]. https://dylhahn.github.io/SCIL-ENSO/surface/img/01_anim_sst.webp"
   }
 ];
