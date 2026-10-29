@@ -127,7 +127,8 @@ h3 { font-size: 1.05rem; letter-spacing: -.01em; }
 .thumb--animation { --tc: var(--c-coral); }
 .thumb--video     { --tc: var(--c-blue); }
 .thumb--image     { --tc: var(--c-green); }
-.thumb--dataset   { --tc: var(--c-sky); }
+.thumb--interactive { --tc: var(--c-teal); }
+.thumb--sky         { --tc: var(--c-sky); }
 [class*="thumb--"] { background: radial-gradient(120% 90% at 0% 0%, color-mix(in srgb, var(--tc) 38%, transparent), transparent 60%), linear-gradient(160deg, #141418, #0b0b0d); }
 .type-tile::before { content: ""; position: absolute; left: 18px; top: 18px; width: 10px; height: 10px; border-radius: 50%; background: var(--tc); box-shadow: 0 0 12px var(--tc); }
 

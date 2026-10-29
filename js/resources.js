@@ -33,7 +33,7 @@
        featured: true   shows it on the home page
    ========================================================= */
 
-const RESOURCE_TYPES = ["Animation", "Video", "Image", "Dataset"];
+const RESOURCE_TYPES = ["Animation", "Video", "Image", "Interactive"];
 const TOPICS = ["ENSO Basics", "Ocean", "Below the Surface", "Kelvin Waves & Sea Level", "Atmosphere", "Impacts", "Southern California", "Forecasting", "Historical Events"];
 const AUDIENCES = ["General Public", "Students", "Educators", "Researchers"];
 

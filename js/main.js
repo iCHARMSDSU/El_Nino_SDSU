@@ -49,7 +49,7 @@ const typeGrid = document.getElementById("type-grid");
 if (typeGrid) {
   const blurbs = {
     Animation: "Maps and fields in motion", Video: "Explainers and lectures",
-    Image: "Figures and static maps", Dataset: "Files for analysis"
+    Image: "Figures and static maps", Interactive: "Explorable visualizations"
     };
   typeGrid.innerHTML = RESOURCE_TYPES.map(t => `
     <a class="type-tile ${typeClass(t)}" href="library.html?type=${encodeURIComponent(t)}">
@@ -126,12 +126,14 @@ if (resourcePage) {
       <p class="lede">That link doesn't match any resource. <a href="library.html">Back to the library</a>.</p>`;
   } else {
     document.title = `${r.title} · El Niño Resource Library`;
+    
 
     let media;
     if (r.youtubeId) media = `<iframe src="https://www.youtube-nocookie.com/embed/${esc(r.youtubeId)}" title="${esc(r.title)}" allowfullscreen></iframe>`;
     else if (r.videoUrl) media = `<video src="${esc(r.videoUrl)}" controls loop playsinline></video>`;
     else if (r.imageUrl) media = `<img src="${esc(r.imageUrl)}" alt="${esc(r.title)}">`;
-    else media = `<div class="media-placeholder"><span>${esc(r.type)} preview</span><small>Add <code>youtubeId</code>, <code>videoUrl</code> or <code>imageUrl</code> to this resource in js/resources.js</small></div>`;
+    else if (r.interactiveUrl) media = `<iframe src="${esc(r.interactiveUrl)}" title="${esc(r.title)}" loading="lazy"></iframe>`;
+    else media = `<div class="media-placeholder">...`;
 
     const row = (label, val) => val ? `<dt>${label}</dt><dd>${esc(val)}</dd>` : "";
     const myTopics = topicsOf(r);
