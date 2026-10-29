@@ -114,5 +114,41 @@ const RESOURCES = [
     data: "NOAA OISST v2.1 monthly mean sea surface temperature (0.25°), via NOAA PSL; normal = OISST 1991–2020 monthly mean.",
     createdBy: "Dylan Hahn, SDSU Climate Informatics Lab",
     citation: "Hahn, D., SDSU Climate Informatics Lab (2026). Sea Surface Temperature Animation [Animation]. https://dylhahn.github.io/SCIL-ENSO/surface/img/01_anim_sst.webp"
+  },
+  {
+    id: "august-sst-comparison-2026",
+    title: "Tropical Pacific Sea Surface Temperature in August: 2026 and Past Strong Events",
+    type: "Image",
+    topic: ["Ocean", "Historical Events"],
+    audience: ["General Public", "Students", "Educators"],
+    summary: "August sea surface temperatures in 2026 compared with four past strong El Niño years.",
+    description: "<p>August sea surface temperature maps of the tropical Pacific for 2026 and four past strong El Niño events: 2023, 2015, 1997, and 1982. In August 2026 the Niño 3.4 anomaly reached +2.1 °C, the highest of the five years at this stage. However, the whole tropics (20°S–20°N) were also +0.8 °C, warmer than in any previous event. Measured relative to the tropics, as NOAA's Relative Oceanic Niño Index (RONI) does, the 2026 anomaly is +1.3 °C. That compares with 2023 +0.6, 2015 +1.3, 1997 +1.6, and 1982 +0.9.</p>",
+    imageUrl: "https://dylhahn.github.io/SCIL-ENSO/surface/img/02_surface_comparison.png",
+    period: "1982–2026",
+    dataSource: "NOAA ERSST v5; NOAAGlobalTemp v6",
+    createdBy: "Dylan Hahn, SDSU Climate Informatics Lab",
+    whatItShows: "<p>Five maps of actual sea surface temperature (not anomalies) across the tropical Pacific in August of each El Niño year, with 2026 outlined in red.</p>",
+    howItRelates: "<p>El Niño is measured by how much warmer than normal the Niño 3.4 region is. Because the whole tropical ocean has warmed, comparing Niño 3.4 to the tropical average (RONI) gives a fairer comparison between recent and past events.</p>",
+    howToRead: "<p>Colors show temperature from 18 °C (dark blue) to above 30 °C (dark red). The black box marks the Niño 3.4 region. The numbers above each map give the Niño 3.4 anomaly and the whole-tropics anomaly for that August, relative to the 1991–2020 normal.</p>",
+    data: "<p>Maps: NOAA ERSST v5 monthly sea surface temperature (2° grid, smoothed for display). Anomaly values: NOAAGlobalTemp v6, relative to the 1991–2020 monthly normal.</p>",
+    citation: "Hahn, D., SDSU Climate Informatics Lab (2026). Tropical Pacific Sea Surface Temperature in August: 2026 and Past Strong Events [Image]. https://dylhahn.github.io/SCIL-ENSO/surface/img/02_surface_comparison.png"
+  },
+  {
+    id: "nino-regions-warming-2026",
+    title: "Warming Across the Niño Regions",
+    type: "Image",
+    topic: ["Ocean", "Historical Events"],
+    audience: ["General Public", "Students", "Educators"],
+    summary: "Warming is strongest near South America and weakest in the western Pacific, a pattern closest to 1997/1998.",
+    description: "<p>Monthly sea surface temperature anomalies in the four standard Niño regions, from the western–central Pacific to the coast of Peru and Ecuador, for 2026/2027 and three past strong El Niño events (1982/1983, 1997/1998, 2015/2016). In September 2026 the warming was concentrated in the east: +4.7 °C in Niño 1+2 versus +0.9 °C in Niño 4. This eastern-Pacific pattern is closest to 1997/1998 but larger in every region.</p>",
+    imageUrl: "https://dylhahn.github.io/SCIL-ENSO/surface/img/03_nino_regions.png",
+    period: "1982–2026",
+    dataSource: "NOAA CPC monthly Niño indices (OISST v2.1)",
+    createdBy: "Dylan Hahn, SDSU Climate Informatics Lab",
+    whatItShows: "<p>Location of the four Niño regions and their monthly anomalies, showing where along the equator the warming is concentrated.</p>",
+    howItRelates: "<p>Where the warming is strongest matters: El Niños that peak near South America and those that peak in the central Pacific affect weather in different ways.</p>",
+    howToRead: "<p>The map shows the four standard boxes along the equator, from Niño 4 (the western–central equatorial Pacific, 5°S–5°N, 160°E–150°W) in the west to Niño 1+2 (off the coasts of Peru and Ecuador, 10°S–0°, 90°W–80°W). Each chart plots how much warmer than normal one box has been, month by month. The red line is 2026/2027, and the dashed line marks September of the onset year. The second “Jan” on each axis is January of the following year.</p>",
+    data: "<p>NOAA CPC monthly Niño region indices (from OISST v2.1), anomalies from 1991–2020. <a href=\"https://www.cpc.ncep.noaa.gov/data/indices/sstoi.indices\" target=\"_blank\" rel=\"noopener\">Monthly Niño region indices (NOAA CPC)</a></p>",
+    citation: "Hahn, D., SDSU Climate Informatics Lab (2026). Warming Across the Niño Regions [Image]. https://dylhahn.github.io/SCIL-ENSO/surface/img/03_nino_regions.png"
   }
 ];
