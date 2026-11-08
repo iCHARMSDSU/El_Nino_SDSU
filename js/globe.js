@@ -17,8 +17,8 @@
 
 const GLOBE = {
   BASE_IMAGE: "images/blue-marble-october.jpg",   // NASA Blue Marble, longitude -180 to 180
-  DATA_IMAGE: "images/sst-anomaly-2026-10-09.png", // NOAA, grayscale, longitude 0 to 360
-  DATE_LABEL: "October 9, 2026",
+  DATA_IMAGE: "images/sst-anomaly-2026-10-23.png", // NOAA, grayscale, longitude 0 to 360
+  DATE_LABEL: "October 23, 2026",
 
   // The grayscale NOAA image stores values from DATA_MIN (black) to DATA_MAX (white).
   // These must match the numbers in the download link.
