@@ -196,7 +196,7 @@ h3 { font-size: 1.05rem; letter-spacing: -.01em; }
 .media > a { display: block; }
 .cite { border-top: 1px solid var(--border); margin-top: 1.1rem; padding-top: 1rem; }
 .cite-label { margin: 0 0 .3rem; font-weight: 600; font-size: .85rem; }
-.cite-text { font-size: .86rem; color: var(--text-soft); margin: 0 0 .7rem; }
+.cite-text { font-size: .86rem; color: var(--text-soft); margin: 0 0 .7rem; overflow-wrap: anywhere; }
 .related { margin-top: 56px; }
 
 /* ===== Prose pages ===== */

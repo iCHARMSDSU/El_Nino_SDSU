@@ -150,5 +150,23 @@ const RESOURCES = [
     howToRead: "<p>The map shows the four standard boxes along the equator, from Niño 4 (the western–central equatorial Pacific, 5°S–5°N, 160°E–150°W) in the west to Niño 1+2 (off the coasts of Peru and Ecuador, 10°S–0°, 90°W–80°W). Each chart plots how much warmer than normal one box has been, month by month. The red line is 2026/2027, and the dashed line marks September of the onset year. The second “Jan” on each axis is January of the following year.</p>",
     data: "<p>NOAA CPC monthly Niño region indices (from OISST v2.1), anomalies from 1991–2020. <a href=\"https://www.cpc.ncep.noaa.gov/data/indices/sstoi.indices\" target=\"_blank\" rel=\"noopener\">Monthly Niño region indices (NOAA CPC)</a></p>",
     citation: "Hahn, D., SDSU Climate Informatics Lab (2026). Warming Across the Niño Regions [Image]. https://dylhahn.github.io/SCIL-ENSO/surface/img/03_nino_regions.png"
+  },
+  {
+    id: "warm-water-layers-animation",
+    title: "Layers of Warm Water Along the Equator",
+    type: "Animation",
+    topic: ["Below the Surface", "Historical Events"],
+    audience: ["General Public", "Students", "Educators"],
+    summary: "The hottest water has grown the most: the volume warmer than 28 °C is far above normal and above past strong El Niños at the same stage.",
+    description: "<p>Animated vertical slices of the upper ocean along the equator, colored by temperature layer, from January of each El Niño's first year to December of the next, for 2026/2027 (to September 2026), 2023/2024, 2015/2016, 1997/1998, 1982/1983 and the 1991–2020 normal. Bars beside each slice show how much water sits in each layer. In September 2026, about 13.7 × 10<sup>14</sup> m³ of water along the equator (5°S–5°N) was warmer than 28 °C.</p>",
+    imageUrl: "https://dylhahn.github.io/SCIL-ENSO/ocean/img/05_anim_warm_layers.webp",
+    period: "1982–2026",
+    dataSource: "NCEP GODAS (NOAA PSL)",
+    createdBy: "Dylan Hahn, SDSU Climate Informatics Lab",
+    whatItShows: "<p>Equatorial sections colored by temperature layer (20–24, 24–26, 26–28, 28–29 and above 29 °C) for 2026/2027, 2023/2024, 2015/2016, 1997/1998, 1982/1983 and the 1991–2020 normal, with the volume of water in each layer between 5°S and 5°N.</p>",
+    howItRelates: "<p>Water above about 28 °C fuels the deep thunderstorms of the tropics. The more of it there is and the farther east it reaches, the farther the tropical rainfall belt shifts, which drives El Niño's effects on weather elsewhere.</p>",
+    howToRead: "<p>Each slice runs along the equator from Asia (left) to South America (right) and from 5 m down to 200 m. Colors mark temperature layers, from below 20 °C (dark blue) to above 29 °C (dark red). Compare each year with the Normal panel at the bottom to see how much deeper and farther east the warm layers reach. The bar beside each slice adds up the volume in each layer, warmest on the left.</p>",
+    data: "<p>NCEP GODAS ocean reanalysis, monthly temperature to 205 m, via NOAA PSL; sections 2°S–2°N, volumes 5°S–5°N, 120°E–80°W; normal = 1991–2020 mean temperature. <a href=\"https://psl.noaa.gov/data/gridded/data.godas.html\" target=\"_blank\" rel=\"noopener\">NCEP GODAS (NOAA PSL)</a></p>",
+    citation: "Hahn, D., SDSU Climate Informatics Lab (2026). Layers of Warm Water Along the Equator [Animation]. https://dylhahn.github.io/SCIL-ENSO/ocean/img/05_anim_warm_layers.webp"
   }
 ];

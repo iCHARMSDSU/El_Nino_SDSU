@@ -153,7 +153,7 @@ if (resourcePage) {
             ${[["What it shows", r.whatItShows], ["How it relates to El Niño", r.howItRelates],
                ["How to read this figure", r.howToRead], ["Data", r.data]]
               .filter(([, v]) => v)
-              .map(([label, v]) => `<div class="explain"><h3>${label}</h3><p>${esc(v)}</p></div>`).join("")}
+              .map(([label, v]) => `<div class="explain"><h3>${label}</h3>${v.startsWith("<") ? v : `<p>${v}</p>`}</div>`).join("")}
           </div>
         </div>
         <aside class="details">
