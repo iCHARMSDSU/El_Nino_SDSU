@@ -1,0 +1,48 @@
+# Publishes the site on every push, and every morning with NOAA's latest
+# sea surface temperature anomaly for the home page globe.
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 15 * * *"   # every day at 15:17 UTC (7:17 am Pacific)
+  workflow_dispatch:         # adds a "Run workflow" button on the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download NOAA's latest sea surface temperature anomaly
+        run: |
+          BASE="https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOisst21NrtAgg"
+          DATE=$(curl -sf --max-time 60 "$BASE.csv0?time%5B(last)%5D" | cut -c1-10) || true
+          if [ -n "$DATE" ] && curl -sf --max-time 300 -o images/sst-latest.png \
+            "$BASE.transparentPng?anom%5B(${DATE}T12:00:00Z)%5D%5B(0.0)%5D%5B(-89.875):(89.875)%5D%5B(0.125):(359.875)%5D&.colorBar=BlackWhite%7CC%7CLinear%7C0%7C6%7C&.size=2880%7C1440"; then
+            echo "{\"date\": \"$DATE\"}" > images/sst-latest.json
+            echo "Downloaded NOAA image for $DATE"
+          else
+            rm -f images/sst-latest.png
+            echo "NOAA download failed; the globe will use its built-in image."
+          fi
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

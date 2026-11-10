@@ -17,8 +17,10 @@
 
 const GLOBE = {
   BASE_IMAGE: "images/blue-marble-october.jpg",   // NASA Blue Marble, longitude -180 to 180
-  DATA_IMAGE: "images/sst-anomaly-2026-10-23.png", // NOAA, grayscale, longitude 0 to 360
-  DATE_LABEL: "October 23, 2026",
+  LATEST_IMAGE: "images/sst-latest.png",  // NOAA, downloaded every morning by .github/workflows/deploy.yml
+  LATEST_INFO: "images/sst-latest.json",  // the date of that image
+  DATA_IMAGE: "images/sst-anomaly-2026-10-23.png", // backup if the daily image is missing (e.g. on localhost)
+  DATE_LABEL: "October 23, 2026",                  // date of the backup image
 
   // The grayscale NOAA image stores values from DATA_MIN (black) to DATA_MAX (white).
   // These must match the numbers in the download link.
@@ -76,7 +78,15 @@ async function buildMap() {
   }
 
   // 2. NOAA anomaly: turn each gray pixel back into a temperature, then color it
-  const data = await loadImage(GLOBE.DATA_IMAGE);
+  let data = await loadImage(GLOBE.LATEST_IMAGE), label = GLOBE.DATE_LABEL;
+  if (data) {
+    const info = await fetch(GLOBE.LATEST_INFO).then(r => r.json()).catch(() => null);
+    label = info ? new Date(info.date + "T12:00:00Z").toLocaleDateString("en-US",
+      { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }) : "";
+  } else {
+    data = await loadImage(GLOBE.DATA_IMAGE);
+  }
+
   if (data) {
     const layer = document.createElement("canvas");
     layer.width = data.naturalWidth; layer.height = data.naturalHeight;
@@ -112,7 +122,7 @@ async function buildMap() {
       ctx.stroke();
     }
   }
-  return { map, hasData: !!data };
+    return { map, hasData: !!data, label };
 }
 
 (function () {
@@ -142,7 +152,7 @@ async function buildMap() {
   spinner.rotation.y = THREE.MathUtils.degToRad(90 - GLOBE.START_LON);  // START_LON faces the viewer
   earth.add(spinner);
 
-  buildMap().then(({ map, hasData }) => {
+  buildMap().then(({ map, hasData, label }) => {
     const texture = new THREE.CanvasTexture(map);
     if ("encoding" in texture) texture.encoding = THREE.sRGBEncoding;
     texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
@@ -150,7 +160,7 @@ async function buildMap() {
                                new THREE.MeshLambertMaterial({ map: texture })));
     box.classList.add("globe-ready");  // hides the CSS placeholder globe
     const date = document.getElementById("globe-date");
-    if (date && hasData) date.textContent = GLOBE.DATE_LABEL;
+    if (date && hasData && label) date.textContent = label;
   });
 
   function resize() {
