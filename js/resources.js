@@ -78,10 +78,9 @@ const RESOURCES = [
     period: "1877–2026",
     dataSource: "NOAA Global Surface Temperature (NOAAGlobalTemp)",
     createdBy: "SDSU Climate Informatics Lab",
-    citation: "Moody, W., SDSU Climate Informatics Lab (2026). Comparing Five Very Strong El Niño Events (1877–2026) [Video]. YouTube. https://youtu.be/yHuUhUuBMwE",
-    featured: true
+    citation: "Moody, W., SDSU Climate Informatics Lab (2026). Comparing Five Very Strong El Niño Events (1877–2026) [Video]. YouTube. https://youtu.be/yHuUhUuBMwE"
   },
-    {
+  {
     id: "wind-bursts-hovmoller",
     title: "Westerly wind bursts along the equator",
     type: "Image",
@@ -167,7 +166,8 @@ const RESOURCES = [
     howItRelates: "<p>Water above about 28 °C fuels the deep thunderstorms of the tropics. The more of it there is and the farther east it reaches, the farther the tropical rainfall belt shifts, which drives El Niño's effects on weather elsewhere.</p>",
     howToRead: "<p>Each slice runs along the equator from Asia (left) to South America (right) and from 5 m down to 200 m. Colors mark temperature layers, from below 20 °C (dark blue) to above 29 °C (dark red). Compare each year with the Normal panel at the bottom to see how much deeper and farther east the warm layers reach. The bar beside each slice adds up the volume in each layer, warmest on the left.</p>",
     data: "<p>NCEP GODAS ocean reanalysis, monthly temperature to 205 m, via NOAA PSL; sections 2°S–2°N, volumes 5°S–5°N, 120°E–80°W; normal = 1991–2020 mean temperature. <a href=\"https://psl.noaa.gov/data/gridded/data.godas.html\" target=\"_blank\" rel=\"noopener\">NCEP GODAS (NOAA PSL)</a></p>",
-    citation: "Hahn, D., SDSU Climate Informatics Lab (2026). Layers of Warm Water Along the Equator [Animation]. https://dylhahn.github.io/SCIL-ENSO/ocean/img/05_anim_warm_layers.webp"
+    citation: "Hahn, D., SDSU Climate Informatics Lab (2026). Layers of Warm Water Along the Equator [Animation]. https://dylhahn.github.io/SCIL-ENSO/ocean/img/05_anim_warm_layers.webp",
+    featured: true
   },
   {
     id: "development-vs-past-el-ninos",
