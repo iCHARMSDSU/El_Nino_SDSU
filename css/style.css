@@ -310,3 +310,8 @@ h3 { font-size: 1.05rem; letter-spacing: -.01em; }
 .globe-legend-labels span { width: 2.2em; text-align: center; }
 .globe-legend-labels span:first-child { text-align: left; }
 .globe-legend-labels span:last-child { text-align: right; }
+
+/* Figures placed on topic pages (filled in by main.js) */
+.page-figure { margin: 1.2rem 0 2rem; }
+.page-figure > h3 { font-size: 1.05rem; margin-bottom: .7rem; }
+.page-figure-link { font-size: .9rem; margin-top: .4rem; }

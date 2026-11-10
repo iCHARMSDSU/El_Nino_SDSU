@@ -188,3 +188,26 @@ if (resourcePage) {
     });
   }
 }
+
+// ---------- Figures on topic pages ----------
+// <div class="page-figure" data-id="RESOURCE-ID"></div> shows that resource from resources.js
+// with the same media and explanation blocks as its resource page.
+document.querySelectorAll(".page-figure").forEach(slot => {
+  const r = RESOURCES.find(x => x.id === slot.dataset.id);
+  if (!r) return;
+  let media;
+  if (r.youtubeId) media = `<iframe src="https://www.youtube-nocookie.com/embed/${esc(r.youtubeId)}" title="${esc(r.title)}" allowfullscreen></iframe>`;
+  else if (r.videoUrl) media = `<video src="${esc(r.videoUrl)}" controls loop playsinline></video>`;
+  else if (r.imageUrl) media = `<a href="${esc(r.imageUrl)}" target="_blank" rel="noopener" title="Open full size"><img src="${esc(r.imageUrl)}" alt="${esc(r.title)}" loading="lazy"></a>`;
+  else if (r.interactiveUrl) media = `<iframe src="${esc(r.interactiveUrl)}" title="${esc(r.title)}" loading="lazy"></iframe>`;
+  slot.innerHTML = `
+    <h3>${esc(r.title)}</h3>
+    <div class="media ${typeClass(r.type)}">${media}</div>
+    <div class="prose">
+      ${[["What it shows", r.whatItShows], ["How it relates to El Niño", r.howItRelates],
+         ["How to read this figure", r.howToRead], ["Data", r.data]]
+        .filter(([, v]) => v)
+        .map(([label, v]) => `<div class="explain"><h3>${label}</h3>${v.startsWith("<") ? v : `<p>${v}</p>`}</div>`).join("")}
+    </div>
+    <p class="page-figure-link"><a href="${resourceLink(r)}">Details, citation and download →</a></p>`;
+});
