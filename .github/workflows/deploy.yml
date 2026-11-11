@@ -6,7 +6,8 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: "17 15 * * *"   # every day at 15:17 UTC (7:17 am Pacific)
+    - cron: "17 15 * * *"   # 7:17 am Pacific
+    - cron: "17 23 * * *"   # 3:17 pm Pacific (second chance if NOAA was down)
   workflow_dispatch:         # adds a "Run workflow" button on the Actions tab
 
 permissions:
@@ -30,15 +31,25 @@ jobs:
       - name: Download NOAA's latest sea surface temperature anomaly
         run: |
           BASE="https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOisst21Agg"
-          DATE=$(curl -sS -f --max-time 60 "$BASE.csv0?time%5B(last)%5D" | cut -c1-10) || true
-          echo "Latest date at NOAA: '$DATE'"
-          if [ -n "$DATE" ] && curl -sS -f --max-time 300 -o images/sst-latest.png \
-            "$BASE.transparentPng?anom%5B(${DATE}T12:00:00Z)%5D%5B(0.0)%5D%5B(-89.875):(89.875)%5D%5B(0.125):(359.875)%5D&.colorBar=BlackWhite%7CC%7CLinear%7C0%7C6%7C&.size=2880%7C1440"; then
-            echo "{\"date\": \"$DATE\"}" > images/sst-latest.json
-            echo "Downloaded NOAA image for $DATE"
+          SITE="https://icharmsdsu.github.io/El_Nino_SDSU"
+          for TRY in 1 2 3; do
+            DATE=$(curl -sS -f --max-time 60 "$BASE.csv0?time%5B(last)%5D" | cut -c1-10) || DATE=""
+            echo "Try $TRY: latest date at NOAA: '$DATE'"
+            if [ -n "$DATE" ] && curl -sS -f --max-time 600 -o images/sst-latest.png \
+              "$BASE.transparentPng?anom%5B(${DATE}T12:00:00Z)%5D%5B(0.0)%5D%5B(-89.875):(89.875)%5D%5B(0.125):(359.875)%5D&.colorBar=BlackWhite%7CC%7CLinear%7C0%7C6%7C&.size=2880%7C1440"; then
+              echo "{\"date\": \"$DATE\"}" > images/sst-latest.json
+              echo "Downloaded NOAA image for $DATE"
+              exit 0
+            fi
+            [ "$TRY" -lt 3 ] && sleep 120
+          done
+          echo "NOAA download failed 3 times; reusing the image already on the live site."
+          if curl -sS -f --max-time 60 -o images/sst-latest.png "$SITE/images/sst-latest.png" && \
+             curl -sS -f --max-time 60 -o images/sst-latest.json "$SITE/images/sst-latest.json"; then
+            echo "Reused live image: $(cat images/sst-latest.json)"
           else
-            rm -f images/sst-latest.png
-            echo "NOAA download failed; the globe will use its built-in image."
+            rm -f images/sst-latest.png images/sst-latest.json
+            echo "No live image either; the globe will use its built-in backup."
           fi
 
       - uses: actions/configure-pages@v5
