@@ -28,7 +28,7 @@ The "Where things stand" box on `el-nino-2026-27.html` uses NOAA's official ENSO
 ## Home page globe (updates automatically)
 The globe shows NOAA's latest sea surface temperature anomaly and updates itself every day. You don't need to do anything.
 
-- **How it works:** `.github/workflows/deploy.yml` runs every morning at about 7:17 am Pacific, and on every push to `main`. It downloads NOAA's newest final OISST v2.1 anomaly map (about two weeks behind real time), saves it as `images/sst-latest.png` with its date in `images/sst-latest.json`, and publishes the site. These two files are added when the site is published and are never committed to the repo.
+- **How it works:** `.github/workflows/deploy.yml` runs twice a day (about 7:17 am and 3:17 pm Pacific) and on every push to `main`. It downloads NOAA's newest final OISST v2.1 anomaly map (about two weeks behind real time), saves it as `images/sst-latest.png` with its date in `images/sst-latest.json`, and publishes the site. These two files are added when the site is published and are never committed to the repo.
 - **Run it now:** on GitHub, open the **Actions** tab, then **Publish site**, then **Run workflow**.
 - **Check that it worked:** open the latest run, click **publish**, and expand **"Download NOAA's latest sea surface temperature anomaly"**. It should say `Downloaded NOAA image for YYYY-MM-DD`.
 - **Backup image:** if NOAA's server is down, or you're previewing on localhost, the globe uses the saved image set by `DATA_IMAGE` and `DATE_LABEL` in `js/globe.js` (currently `images/sst-anomaly-2026-10-23.png`). To replace the backup, download a newer map with the link below (change the date), save it in `images/`, and update those two lines.
