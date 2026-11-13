@@ -134,7 +134,7 @@ if (resourcePage) {
     if (r.youtubeId) media = `<iframe src="https://www.youtube-nocookie.com/embed/${esc(r.youtubeId)}" title="${esc(r.title)}" allowfullscreen></iframe>`;
     else if (r.videoUrl) media = `<video src="${esc(r.videoUrl)}" controls loop playsinline></video>`;
     else if (r.imageUrl) media = `<a href="${esc(r.imageUrl)}" target="_blank" rel="noopener" title="Open full size"><img src="${esc(r.imageUrl)}" alt="${esc(r.title)}"></a>`;
-    else if (r.interactiveUrl) media = `<iframe src="${esc(r.interactiveUrl)}" title="${esc(r.title)}" loading="lazy"></iframe>`;
+    else if (r.interactiveUrl) media = `<iframe class="embed" src="${esc(r.interactiveUrl)}" title="${esc(r.title)}" loading="lazy" allowfullscreen></iframe>`;
     else media = `<div class="media-placeholder">...`;
 
     const row = (label, val) => val ? `<dt>${label}</dt><dd>${esc(val)}</dd>` : "";

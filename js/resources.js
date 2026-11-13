@@ -239,5 +239,19 @@ const RESOURCES = [
     howToRead: "The solid red line is 2026/2027 so far, and the dashed red line is NOAA's median forecast. The darker shading shows the middle half of NOAA's forecast range (25–75%), and the lighter shading the wider range (5–95%). Gray lines are the very strong El Niños of 1972/1973, 1982/1983, 1997/1998 and 2015/2016. Dashed horizontal lines mark the strength categories labeled on the right, and the dotted line marks the strongest peak since 1950.",
     data: "NOAA CPC Relative Oceanic Niño Index (RONI) and the official RONI outlook and strength probabilities.",
     citation: "Hahn, D., SDSU Climate Informatics Lab (2026). NOAA Forecast Compared with the Strongest Past El Niños [Image]. https://dylhahn.github.io/SCIL-ENSO/"
+  },
+  {
+    id: "tropical-pacific-3d-interactive",
+    title: "Interactive 3D: Warm Layer, Temperature Layers and Hottest Water",
+    type: "Interactive",
+    topic: ["Below the Surface", "Ocean"],
+    audience: ["General Public", "Students", "Educators"],
+    summary: "Rotate the tropical Pacific in 3D and compare the warm layer in 2026/2027 with past strong El Niños and a normal year.",
+    interactiveUrl: "https://dylhahn.github.io/SCIL-ENSO/embed/interactive_3d.html",
+    createdBy: "Dylan Hahn, SDSU Climate Informatics Lab",
+    whatItShows: "A rotatable 3D model of the tropical Pacific with three views: the warm layer (the sea above the 20 °C line), the depths of the 20, 24, 26 and 28 °C temperature layers, and the volume of the hottest water, above 28 and 29 °C.",
+    howItRelates: "During El Niño, warm water spreads east and the warm layer thickens near South America. Comparing 2026/2027 with 1982/1983, 1997/1998, 2015/2016, 2023/2024 and the 1991–2020 normal shows how this event's warm water compares with past events.",
+    howToRead: "Click \"Load the 3D view\" to start (about 4 MB). Drag to rotate and scroll to zoom. Choose a period, step through the months, and switch between the Warm layer, Temperature layers and Hottest water views.",
+    citation: "Hahn, D., SDSU Climate Informatics Lab (2026). Interactive 3D: Warm Layer, Temperature Layers and Hottest Water [Interactive]. https://dylhahn.github.io/SCIL-ENSO/"
   }
 ];

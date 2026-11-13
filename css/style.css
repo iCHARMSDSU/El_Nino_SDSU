@@ -315,3 +315,7 @@ h3 { font-size: 1.05rem; letter-spacing: -.01em; }
 .page-figure { margin: 1.2rem 0 2rem; }
 .page-figure > h3 { font-size: 1.05rem; margin-bottom: .7rem; }
 .page-figure-link { font-size: .9rem; margin-top: .4rem; }
+
+/* Interactive figures: tall frame instead of the 16:9 video box */
+.media:has(iframe.embed) { aspect-ratio: auto; }
+.media iframe.embed { height: 900px; background: transparent; }
