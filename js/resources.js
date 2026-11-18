@@ -248,10 +248,31 @@ const RESOURCES = [
     audience: ["General Public", "Students", "Educators"],
     summary: "Rotate the tropical Pacific in 3D and compare the warm layer in 2026/2027 with past strong El Niños and a normal year.",
     interactiveUrl: "https://dylhahn.github.io/SCIL-ENSO/embed/interactive_3d.html",
+    thumbnail: "https://dylhahn.github.io/SCIL-ENSO/downloads/anim_3d.png",
+    period: "1982–2026",
+    dataSource: "NCEP GODAS (NOAA PSL)",
     createdBy: "Dylan Hahn, SDSU Climate Informatics Lab",
     whatItShows: "A rotatable 3D model of the tropical Pacific with three views: the warm layer (the sea above the 20 °C line), the depths of the 20, 24, 26 and 28 °C temperature layers, and the volume of the hottest water, above 28 and 29 °C.",
     howItRelates: "During El Niño, warm water spreads east and the warm layer thickens near South America. Comparing 2026/2027 with 1982/1983, 1997/1998, 2015/2016, 2023/2024 and the 1991–2020 normal shows how this event's warm water compares with past events.",
     howToRead: "Click \"Load the 3D view\" to start (about 4 MB). Drag to rotate and scroll to zoom. Choose a period, step through the months, and switch between the Warm layer, Temperature layers and Hottest water views.",
     citation: "Hahn, D., SDSU Climate Informatics Lab (2026). Interactive 3D: Warm Layer, Temperature Layers and Hottest Water [Interactive]. https://dylhahn.github.io/SCIL-ENSO/"
+  },
+  {
+    id: "sea-level-kelvin-waves-interactive",
+    title: "Interactive 3D: Sea Level and Kelvin Waves",
+    type: "Interactive",
+    topic: ["Kelvin Waves & Sea Level", "Ocean"],
+    audience: ["General Public", "Students", "Educators"],
+    summary: "Rotate daily satellite sea level across the tropical Pacific in 3D. Sea level along the equator in the eastern Pacific has risen about 40 cm since mid-2025 as warm water piled up.",
+    interactiveUrl: "https://dylhahn.github.io/SCIL-ENSO/embed/interactive_sealevel.html",
+    thumbnail: "https://dylhahn.github.io/SCIL-ENSO/downloads/anim_kelvin.png",
+    period: "2025–2026",
+    dataSource: "NOAA blended satellite altimetry (NOAA CoastWatch)",
+    createdBy: "Dylan Hahn, SDSU Climate Informatics Lab",
+    whatItShows: "Daily satellite sea level height (SSH) across the tropical Pacific as a 3D landscape you can rotate, from October 2025 to the latest day. It shows either the rise as warm water piles up or the Kelvin-wave signal alone.",
+    howItRelates: "Warm water takes up more space, so sea level rises where the warm layer thickens. Satellite sea level gives a daily, ocean-wide picture of where El Niño's heat is building up and of the Kelvin waves that carry it east. Higher sea level along the coasts of the Americas is itself one of El Niño's effects.",
+    howToRead: "Height and color show sea level compared with normal for the time of year, from blue (lower) to red (higher). Watch the ridge along the equator grow toward South America (right). Height is exaggerated about 4 million times. Switch to the Kelvin-wave signal to watch individual waves roll east, and switch between cm and inches. Press play or drag the slider to step through the days. Drag to rotate, and use + and – to zoom.",
+    data: "NOAA blended satellite altimetry, daily sea surface height anomaly over 12°S–12°N at 1° (from a 0.25° daily grid), via NOAA CoastWatch ERDDAP. Anomalies are from the 2017–2024 seasonal cycle. Kelvin-wave signal = anomaly minus its 91-day running mean.",
+    citation: "Hahn, D., SDSU Climate Informatics Lab (2026). Interactive 3D: Sea Level and Kelvin Waves [Interactive]. https://dylhahn.github.io/SCIL-ENSO/"
   }
 ];
